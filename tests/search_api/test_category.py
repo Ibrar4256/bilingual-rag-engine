@@ -15,6 +15,8 @@ def _mock_search_table(table, query, limit=20, offset=0, lang_override=None, ext
         "response_time_ms": 42.0,
         "retrieval_mode": "hybrid_rrf",
         "cross_language_fallback_triggered": False,
+        "total_count": 1,
+        "offset": offset,
         "results": [
             {
                 "category_id": "904",

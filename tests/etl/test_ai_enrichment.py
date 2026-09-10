@@ -65,16 +65,15 @@ class TestEnrich:
         assert result["status"] == "REVIEW"
         assert result["add_words"] == []
 
-    def test_missing_fields_still_returns_present_ones(self):
+    def test_missing_fields_triggers_guardrail_fallback(self):
         partial = {"ai_type": "GÉP_ÉS_BERENDEZÉS", "status": "OK"}
         llm = make_mock_llm(json.dumps(partial))
         store = make_mock_prompt_store()
 
         result = enrich("Some company description.", llm=llm, prompt_store=store)
 
-        assert result["ai_type"] == "GÉP_ÉS_BERENDEZÉS"
-        assert result["status"] == "OK"
-        assert result["add_words"] is None
+        assert result["status"] == "REVIEW"
+        assert result["add_words"] == []
 
     def test_empty_text_returns_delete_status_without_calling_llm(self):
         llm = make_mock_llm("should not be used")

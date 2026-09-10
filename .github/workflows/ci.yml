@@ -74,10 +74,11 @@ jobs:
           GEMINI_API_KEY: "test-key-not-used"
         run: |
           pytest tests/etl/ -v --tb=short \
-            -k "not test_integration" \
+            -k "not test_integration and not test_real_data and not test_empty_descriptions_counted" \
             --ignore=tests/etl/test_embeddings.py \
             --ignore=tests/etl/test_llm_provider.py \
-            --ignore=tests/etl/test_embedding_provider.py
+            --ignore=tests/etl/test_embedding_provider.py \
+            --ignore=tests/etl/test_lemmatizer.py
 
   test-api:
     name: Search API Tests

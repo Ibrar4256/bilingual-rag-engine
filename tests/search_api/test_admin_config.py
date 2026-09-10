@@ -21,16 +21,17 @@ def _get_token():
 
 def test_put_and_get_config_key():
     token = _get_token()
-    client.put(
-        "/admin/config/llm_provider",
-        json={"value": {"active": "groq"}},
+    put_resp = client.put(
+        "/admin/config/test_setting",
+        json={"value": {"enabled": True}},
         headers={"Authorization": f"Bearer {token}"},
     )
-    resp = client.get("/admin/config/llm_provider", headers={"Authorization": f"Bearer {token}"})
+    assert put_resp.status_code == 200
+    resp = client.get("/admin/config/test_setting", headers={"Authorization": f"Bearer {token}"})
     assert resp.status_code == 200
     body = resp.json()
-    assert body["key"] == "llm_provider"
-    assert "active" in body["value"]
+    assert body["key"] == "test_setting"
+    assert body["value"]["enabled"] is True
 
 
 def test_get_config_not_found():
@@ -42,18 +43,20 @@ def test_get_config_not_found():
 def test_put_config_updates_value():
     token = _get_token()
     resp = client.put(
-        "/admin/config/llm_provider",
-        json={"value": {"active": "gemini"}},
+        "/admin/config/test_setting",
+        json={"value": {"mode": "alpha"}},
         headers={"Authorization": f"Bearer {token}"},
     )
     assert resp.status_code == 200
-    assert resp.json()["value"]["active"] == "gemini"
+    assert resp.json()["value"]["mode"] == "alpha"
 
-    client.put(
-        "/admin/config/llm_provider",
-        json={"value": {"active": "groq"}},
+    resp2 = client.put(
+        "/admin/config/test_setting",
+        json={"value": {"mode": "beta"}},
         headers={"Authorization": f"Bearer {token}"},
     )
+    assert resp2.status_code == 200
+    assert resp2.json()["value"]["mode"] == "beta"
 
 
 def test_provider_availability_endpoint():
