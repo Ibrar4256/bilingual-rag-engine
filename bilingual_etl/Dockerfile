@@ -10,7 +10,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY bilingual_etl/ bilingual_etl/
-COPY data/ data/
+RUN mkdir -p data
 
 RUN adduser --disabled-password --no-create-home appuser
 USER appuser
