@@ -19,7 +19,6 @@ Usage:
 """
 
 import hashlib
-import json
 import time
 
 from loguru import logger

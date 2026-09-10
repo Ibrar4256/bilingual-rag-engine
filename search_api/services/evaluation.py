@@ -7,15 +7,13 @@ Runs against a ground-truth test set of (query, relevant_ids) pairs.
 
 import math
 import time
-from typing import Literal
 
 from loguru import logger
 from psycopg2.extras import RealDictCursor
 
 from bilingual_etl.providers.embedding_provider import get_embedding_provider
 from search_api.db import get_connection
-from search_api.services.language_router import bm25_column, detect_query_language
-from search_api.services.rrf import fuse_rankings
+from search_api.services.language_router import bm25_column
 from search_api.services.search import search_table
 
 

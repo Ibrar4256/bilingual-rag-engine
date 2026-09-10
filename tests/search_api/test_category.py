@@ -9,7 +9,7 @@ from search_api.main import app
 client = TestClient(app)
 
 
-def _mock_search_table(table, query, limit=20, lang_override=None, extra_where="", extra_params=()):
+def _mock_search_table(table, query, limit=20, offset=0, lang_override=None, extra_where="", extra_params=(), rerank=False):
     return {
         "detected_language": "hu",
         "response_time_ms": 42.0,

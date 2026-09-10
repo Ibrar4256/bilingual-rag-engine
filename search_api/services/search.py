@@ -12,7 +12,6 @@ This module encapsulates steps 1–3 so the routers stay thin.
 import time
 from typing import Literal
 
-from loguru import logger
 from psycopg2.extras import RealDictCursor
 
 from bilingual_etl.providers.embedding_provider import get_embedding_provider
@@ -59,13 +58,13 @@ def log_search_analytics(query: str, endpoint: str, language: str, result_count:
             conn.close()
     except Exception:
         pass
-from search_api.services.language_router import (
+from search_api.services.language_router import (  # noqa: E402
     bm25_column,
     detect_query_language,
     other_language,
     should_fallback,
 )
-from search_api.services.rrf import fuse_rankings
+from search_api.services.rrf import fuse_rankings  # noqa: E402
 
 
 def embed_query(query: str) -> list[float]:

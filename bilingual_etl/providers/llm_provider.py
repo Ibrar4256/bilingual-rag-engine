@@ -18,7 +18,6 @@ Usage:
     response = generate_with_retry(provider, "Translate this to English: ...", system_prompt="...")
 """
 
-import json
 import os
 import time
 from abc import ABC, abstractmethod

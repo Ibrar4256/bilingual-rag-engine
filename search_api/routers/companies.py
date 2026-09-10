@@ -99,7 +99,8 @@ def match_companies(req: CompanyMatchRequest) -> CompanyMatchResponse:
             )
             bm25_primary_rows = cur.fetchall()
 
-            chunk_key = lambda r: f"{r['company_id']}:{r['chunk_index']}"
+            def chunk_key(r):
+                return f"{r['company_id']}:{r['chunk_index']}"
             vector_ids = [chunk_key(r) for r in vector_rows]
             bm25_primary_ids = [chunk_key(r) for r in bm25_primary_rows]
 
@@ -241,7 +242,8 @@ def search_single_company(req: SingleCompanySearchRequest) -> SingleCompanySearc
             )
             bm25_primary_rows = cur.fetchall()
 
-            chunk_key = lambda r: f"{r['company_id']}:{r['chunk_index']}"
+            def chunk_key(r):
+                return f"{r['company_id']}:{r['chunk_index']}"
             vector_ids = [chunk_key(r) for r in vector_rows]
             bm25_primary_ids = [chunk_key(r) for r in bm25_primary_rows]
 
@@ -278,7 +280,7 @@ def search_single_company(req: SingleCompanySearchRequest) -> SingleCompanySearc
             fused_keys = [ck for ck, _ in page_single]
             if fused_keys:
                 cur.execute(
-                    f"SELECT * FROM company_vectors WHERE company_id = %s",
+                    "SELECT * FROM company_vectors WHERE company_id = %s",
                     (req.company_id,),
                 )
                 all_rows = {f"{r['chunk_index']}:{r['language']}": dict(r) for r in cur.fetchall()}

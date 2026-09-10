@@ -10,7 +10,6 @@ production AI agents — the LLM doesn't search directly, it plans which
 tools to use based on the user's intent.
 """
 
-import json
 import time
 
 from loguru import logger

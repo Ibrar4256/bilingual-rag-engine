@@ -99,7 +99,7 @@ def generate_with_guardrails(
 
         if attempt <= max_retries:
             feedback = (
-                f"\n\nYour previous response had validation errors:\n"
+                "\n\nYour previous response had validation errors:\n"
                 + "\n".join(f"- {e}" for e in errors)
                 + "\n\nPlease fix these issues and respond with valid JSON containing "
                 f"all required fields: {', '.join(required_fields)}"

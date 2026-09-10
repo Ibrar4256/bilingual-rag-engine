@@ -7,7 +7,6 @@ allowing users to continue where they left off.
 
 import json
 import uuid
-from datetime import datetime
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from loguru import logger

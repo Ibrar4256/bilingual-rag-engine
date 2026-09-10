@@ -9,7 +9,6 @@ correct rather than coupling them at import time.
 
 import os
 
-import psycopg2
 from psycopg2 import pool
 
 DATABASE_URL = os.getenv(

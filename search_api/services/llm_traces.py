@@ -7,7 +7,6 @@ estimated cost per call. The data feeds the admin Observability dashboard.
 
 import time
 import threading
-from dataclasses import dataclass, field
 
 from loguru import logger
 
@@ -161,7 +160,6 @@ def traced_embed(provider, texts: list[str]) -> list[list[float]]:
     try:
         result = provider.embed(texts)
         elapsed = (time.perf_counter() - start) * 1000
-        output_tokens = len(texts) * provider.dimensions
         record_trace(
             provider=provider.name,
             model=getattr(provider, "model", "local"),

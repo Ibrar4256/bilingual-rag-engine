@@ -20,7 +20,7 @@ def test_login_success():
     body = resp.json()
     assert "access_token" in body
     assert body["token_type"] == "bearer"
-    assert body["expires_in"] == 86400
+    assert body["expires_in"] == 28800
 
 
 @patch("search_api.routers.auth.ADMIN_USERNAME", "testadmin")

@@ -168,7 +168,7 @@ def set_config(key: str, body: ConfigValue):
 
 etl_router = APIRouter(tags=["etl"])
 
-_etl_process: "subprocess.Popen | None" = None
+_etl_process = None
 
 
 def _set_etl_status(new_status: str) -> None:
@@ -220,7 +220,8 @@ def get_etl_progress():
 
 @etl_router.post("/admin/etl/start", dependencies=[Depends(require_admin)])
 def start_etl(force_enrichment: bool = False):
-    import subprocess, sys
+    import subprocess
+    import sys
 
     global _etl_process
     if _etl_process is not None and _etl_process.poll() is None:
