@@ -1,0 +1,22 @@
+-- NOTE: docs/Client_UAT_Evidence_README.md references column narrative_templates;
+-- this project schema.sql uses "narrative" for category_vectors (the README
+-- describes a different reference codebase per REQUIREMENTS.md item 1). Query
+-- adapted to this project actual column names.
+
+SELECT
+  category_id,
+  language,
+  LEFT(narrative, 240) AS vector_text_preview,
+  LEFT(COALESCE(bm25_tokens_hu::text, bm25_tokens_en::text, ''), 240) AS bm25_tokens_preview
+FROM category_vectors
+ORDER BY updated_at DESC
+LIMIT 6;
+
+category_id | language | vector_text_preview | bm25_tokens_preview
+----------------------------------------------------------------------------------------------------
+906 | hu | Az Alumínium redőny kategória a következő besorolási úton található: Redőny > Külső árnyékoló. A redőny, vagy más néven roló, a lakóépületek hő- és hangszigetelését, esetenként a vagyonvédelmet hivatott megoldani. Az elterjedt típusai a nyí | 'ajánlat':79 'alu':85 'alumínium':1,69 'automatizálható':55 'avagy':29 'besorolási':5 'beszerelés':93 'beszerzés':74 'beépíthető':28 'cég':81 'cél':67 'egyszerre':82 'elterjedt':21 'elé':24 'emelés':35 'eset':17 'forgalmazás':92 'gurtni':42
+906 | en | The Aluminium roller shutter category falls under: Shutter (roller shutter) > External shading device. The shutter, also called a roller blind, is intended to solve the heat‑ and sound‑insulation of residential buildings, and, in some cases | 'accomplish':44 'address':47 'alu':94 'aluminium':1,74 'and':19,24,41,70,85,103 'associate':97 'at':91 'automate':63 'available':72 'beszerelé':102 'blind':15 'box':31,38 'building':23 'built':35 'call':13 'case':25 'category':4,98 'chain':
+905 | hu | A Redőny kategória a következő besorolási úton található: Külső árnyékoló. Az árnyékolástechnika legelterjedtebb képviselője a redőny, amit elsősorban szárnyas nyílászáróknál (ablakok, illetve ajtók esetében) alkalmaznak. Redőnyöket régóta  | '-8':54 '5':53 'ablak':16 'ajtó':17 'ajánlat':73 'alkalmaz':19 'alumínium':33 'besorolási':4 'beszerelés':83 'beszerzés':68 'cm':55 'cég':75 'egyforma':41 'egymás':42 'egyszerre':76 'elem':44,52 'elsősorban':13 'elterjedt':10 'erő':48 'eset
+905 | en | The Shutter (roller shutter) category falls under: External shading device.. The most common representative of shading technology is the roller shutter, which is primarily used on hinged openings (windows and doors). Roller shutters have lo | '5':49 '8':50 'allow':53 'aluminum':32 'and':19,68,82 'associate':76 'at':74 'beszerelé':81 'category':4,77 'cm':51 'collect':69 'common':9 'compact':57 'company':73 'consist':39 'construction':35 'cylindrical':58 'device':8 'door':20 'dwel
+904 | hu | Általános vélemény szerint a külső árnyékolók sokkal hatásosabbak a belső árnyékolóknál, tekintve, hogy a napsütést már az ablaküveg előtt megszűrik, illetve nem is engedik, hogy eljusson az ablakig. Emiatt a külső árnyékolók nemcsak fény-, | 'ablak':14,25,38 'ablaküveg':10 'ajánlat':67 'anyag':49 'belső':6,51,57 'beszerzés':62 'cég':69 'egyben':20 'egyszerre':70 'eljut':13 'emiatt':15 'enged':12 'erős':48,54 'erősített':40 'felmelegít':27 'forgalmazás':79 'fény':19 'fölé':39 'g
+904 | en | General opinion holds that external shading devices are far more effective than internal shading devices, since they filter sunlight already before the window glass—or even prevent it from reaching the window altogether. As a result, extern | 'aid':29 'altogether':19 'and':46,76,93 'associate':87 'at':82 'category':53,88 'collect':77 'company':81 'condition':66 'control':25 'device':6,11,23,42,56,61 'effective':8 'efficiently':73 'especially':35 'example':39 'expose':63 'externa

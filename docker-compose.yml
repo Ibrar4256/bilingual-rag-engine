@@ -1,0 +1,58 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: bilingual_postgres
+    environment:
+      POSTGRES_USER: bilingual
+      POSTGRES_PASSWORD: bilingual
+      POSTGRES_DB: bilingual_search
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bilingual -d bilingual_search"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  etl:
+    build:
+      context: .
+      dockerfile: bilingual_etl/Dockerfile
+    container_name: bilingual_etl
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://bilingual:bilingual@postgres:5432/bilingual_search
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+
+  search-api:
+    build:
+      context: .
+      dockerfile: search_api/Dockerfile
+    container_name: bilingual_search_api
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql://bilingual:bilingual@postgres:5432/bilingual_search
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  admin-ui:
+    build:
+      context: admin-ui
+      dockerfile: Dockerfile
+    container_name: bilingual_admin_ui
+    ports:
+      - "3000:80"
+    depends_on:
+      - search-api
+
+volumes:
+  pgdata:

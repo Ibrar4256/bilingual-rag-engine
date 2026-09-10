@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "search-api",
+      "runtimeExecutable": "uvicorn",
+      "runtimeArgs": ["search_api.main:app", "--reload", "--port", "8000"],
+      "port": 8000
+    },
+    {
+      "name": "admin-ui",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--prefix", "admin-ui"],
+      "port": 5173
+    }
+  ]
+}

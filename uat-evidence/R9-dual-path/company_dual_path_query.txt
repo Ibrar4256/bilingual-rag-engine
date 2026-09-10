@@ -1,0 +1,41 @@
+-- NOTE: docs/Client_UAT_Evidence_README.md references column narrative_templates;
+-- this project schema.sql uses "content_chunk" for company_vectors (the README
+-- describes a different reference codebase per REQUIREMENTS.md item 1). Query
+-- adapted to this project actual column names.
+
+SELECT
+  company_id,
+  language,
+  chunk_index,
+  LEFT(content_chunk, 240) AS vector_text_preview,
+  LEFT(COALESCE(bm25_tokens_hu::text, bm25_tokens_en::text, ''), 240) AS bm25_tokens_preview
+FROM company_vectors
+ORDER BY created_at DESC
+LIMIT 6;
+
+company_id | language | chunk_index | vector_text_preview | bm25_tokens_preview
+----------------------------------------------------------------------------------------------------
+65279 | hu | 0 | [CÉG:] AGS BUDAPEST NEMZETKÖZI KÖLTÖZTETŐ Kft.
+[PROFIL:] költöztetés
+
+Az AGS BUDAPEST NEMZETKÖZI KÖLTÖZTETŐ Kft. egy korlátolt felelősségű társaság (Kft.), amelyet 1993-ban alapítottak, és jelenleg 5 főt foglalkoztat. A cég jelenleg működő  | '000':48 '1974':31 '1993':18 '20':71 '5':21 '50':47 '9001':63,89 'ags':2,9,28 'alapít':19 'archiválás':38 'archiválási':84 'budapest':3,10 'ce':66 'család':49 'cég':1,24 'déménagement':29 'e':80 'európa':98 'felelősségű':15 'foglalkoztat':2
+65279 | en | 0 | [COMPANY:] AGS BUDAPEST NEMZETKÖZI KÖLTÖZTETŐ Kft.
+[PROFILE:] Moving (relocation)
+
+AGS BUDAPEST NEMZETKÖZI KÖLTÖZTETŐ Kft. is a Limited Liability Company (Kft.) founded in 1993 with 5 employees. The company currently has active status. AGS  | '000':47 '1974':37 '1993':20 '20':73 '5':21 '50':46 '9001':67 'active':25 'activity':54 'ags':2,10,27 'alatt':86 'and':35,49,61 'archiving':36 'archiválási':98 'area':53 'ask':76 'biztonságára':105 'brand':68 'budapest':3,11 'bérlésére':111
+65278 | hu | 0 | [CÉG:] AEROCIKLON Kft.
+[PROFIL:] Épületgépészeti szerelvény, Épületgépészeti szolgáltatás és fűtéstechnika
+
+Az AEROCIKLON Kft. egy korlátolt felelősségű társaság (Kft.), amelyet 2011-ban alapítottak, és jelenleg 2 főt foglalkoztat. A cég je | '2':19 '20':55 '2011':16 '9001':47 'aerociklon':2,10 'alapít':17 'beszerelés':43 'biztosít':66 'cég':1,22,26 'e':65 'felelősségű':13 'foglalkoztat':21 'forgalmazott':48 'fő':20,27 'fűtéstechnika':9,34 'fűtéstechnikai':59 'garanciális':72 'g
+65278 | en | 0 | [COMPANY:] AEROCIKLON Kft.
+[PROFILE:] Building‑services fitting, Building engineering service and Heating technology
+
+AEROCIKLON Kft. is a Limited Liability Company (Kft.) founded in 2011 with 2 employees. The company currently has active s | '2':22 '20':68,107 '2011':21 '9001':61,86 'active':26 'activity':31 'aerociklon':2,14 'air':44 'and':11,48,55,65 'area':30 'ask':71 'berendezésekre':105 'boiler':41 'brand':62 'building':5,8,33,36 'certification':59 'climate':42 'company':1
+65276 | hu | 0 | [CÉG:] Zultzer Pumpen Kft.
+[PROFIL:] kompresszor, szennyvíztechnika és szivattyú
+
+A Zultzer Pumpen Kft. egy korlátolt felelősségű társaság (Kft.), amelyet 1996-ban alapítottak, és jelenleg 13 főt foglalkoztat. A cég jelenleg működő státuszú | '13':19 '14001':67,115 '1996':16 '20':86 '9001':69,117 'abs':33,72,73,75,103 'alapít':17 'beszerelés':61 'biztosít':47 'bér':107 'bérlés':60 'cég':1,22 'e':96,105 'eszköz':41 'felelősségű':13 'feltétel':101 'felügyeleti':40 'foglalkoztat':2
+65276 | en | 0 | [COMPANY:] Zultzer Pumpen Kft.
+[PROFILE:] compressor, Wastewater technology and pump
+
+Zultzer Pumpen Kft. is a Limited Liability Company (Kft.) founded in 1996 with 13 employees. The company currently has active status. Sulzer is a global s | '13':20 '14001':78,111 '1996':19 '20':97 '9001':81,114 'abs':36,84,85,87,129 'active':24 'activity':56 'aeration':40 'and':9,44,47,62,72,79,94 'area':55 'ask':100 'az':128 'berendezésekkel':117 'brand':82 'bérleti':120 'certification':76 'c

@@ -1,0 +1,27 @@
+=== CATEGORY 904 — HU/EN parity (R6 narrative builder + R3 translation) ===
+
+--- category_id=904 language=en ---
+General opinion holds that external shading devices are far more effective than internal shading devices, since they filter sunlight already before the window glass—or even prevent it from reaching the window altogether. As a result, external shading devices are not only light‑control tools but also heat‑regulating aids, because if sunlight does not reach the window it cannot heat the room, which is especially useful during the summer heatwave. Examples of external shading devices include louver...
+metadata.category_name=External shading device
+metadata.status=OK
+
+--- category_id=904 language=hu ---
+Általános vélemény szerint a külső árnyékolók sokkal hatásosabbak a belső árnyékolóknál, tekintve, hogy a napsütést már az ablaküveg előtt megszűrik, illetve nem is engedik, hogy eljusson az ablakig. Emiatt a külső árnyékolók nemcsak fény-, hanem egyben hőszabályzó segédeszközök is, hiszen ha a napfény nem jut el az ablakig, akkor nem is tudja felmelegíteni a szobát, ez különösen a nyári kánikulában rendkívül hasznos. Ilyen külső árnyékoló például a zsaluzia, vagy a redőny, de az ablak fölé erős...
+metadata.category_name=Külső árnyékoló
+metadata.status=OK
+
+
+=== COMPANY 65276 — HU/EN parity (R6 narrative + R7 chunk header) ===
+
+--- company_id=65276 language=en ---
+[COMPANY:] Zultzer Pumpen Kft.
+[PROFILE:] compressor, Wastewater technology and pump
+
+Zultzer Pumpen Kft. is a Limited Liability Company (Kft.) founded in 1996 with 13 employees. The company currently has active status. Sulzer is a global service provider in wastewater‑treatment technology; across its full product range it offers ABS‑manufactured pumps, mixers, aeration equipment, compressors, as well as controls and monitoring devices, and service. Sulzer also supplies pumps for the dewatering market. Their main areas of activity include: compressor, Wastewater technology, pump and Sealing te...
+
+--- company_id=65276 language=hu ---
+[CÉG:] Zultzer Pumpen Kft.
+[PROFIL:] kompresszor, szennyvíztechnika és szivattyú
+
+A Zultzer Pumpen Kft. egy korlátolt felelősségű társaság (Kft.), amelyet 1996-ban alapítottak, és jelenleg 13 főt foglalkoztat. A cég jelenleg működő státuszú. A Sulzer globális szolgáltatásszállító a szennyvízkezelési technológia terén; teljes termékpalettáján ABS gyártmányú szivattyúkat, keverőket, levegőztetőberendezéseket, kompresszorokat, valamint vezérléseket és felügyeleti eszközöket, illetve szervizt kínál. A Sulzer a vízmentesítő piac számára is biztosít szivattyúkat. Fő tevékenységi területeik: kompress...
+

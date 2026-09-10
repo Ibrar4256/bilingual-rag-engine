@@ -1,0 +1,147 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  PYTHON_VERSION: "3.10"
+  NODE_VERSION: "20"
+  POSTGRES_USER: bilingual
+  POSTGRES_PASSWORD: bilingual
+  POSTGRES_DB: bilingual_search
+  DATABASE_URL: postgresql://bilingual:bilingual@localhost:5432/bilingual_search
+
+jobs:
+  lint-and-type-check:
+    name: Lint & Type Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install ruff mypy
+
+      - name: Ruff lint
+        run: ruff check bilingual_etl/ search_api/ --select E,W,F --ignore E501
+
+      - name: Ruff format check
+        run: ruff format --check bilingual_etl/ search_api/ || true
+
+  test-etl:
+    name: ETL Tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Initialize database schema
+        run: python -m bilingual_etl.load.db
+
+      - name: Run ETL tests
+        env:
+          GEMINI_API_KEY: "test-key-not-used"
+        run: |
+          pytest tests/etl/ -v --tb=short \
+            -k "not test_integration" \
+            --ignore=tests/etl/test_embeddings.py \
+            --ignore=tests/etl/test_llm_provider.py \
+            --ignore=tests/etl/test_embedding_provider.py
+
+  test-api:
+    name: Search API Tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Initialize database schema
+        run: python -m bilingual_etl.load.db
+
+      - name: Run API tests
+        env:
+          GEMINI_API_KEY: "test-key-not-used"
+        run: |
+          pytest tests/search_api/ -v --tb=short
+
+  test-admin-ui:
+    name: Admin UI Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        working-directory: admin-ui
+        run: npm ci
+
+      - name: Build
+        working-directory: admin-ui
+        run: npm run build
+
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-latest
+    needs: [lint-and-type-check, test-etl, test-api, test-admin-ui]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Docker images
+        run: docker compose build --no-cache

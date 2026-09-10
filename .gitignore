@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+dist/
+admin-ui/dist/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Source data (client exports — too large / private for public repo)
+data/*.json
+
+# Docker
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude Code (machine-specific)
+.claude/settings.local.json
+
+# UAT evidence captures (large, generated)
+uat-evidence/*.png
+uat-evidence/*.mp4

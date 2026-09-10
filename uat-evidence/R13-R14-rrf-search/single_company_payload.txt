@@ -1,0 +1,46 @@
+=== /search/single-company ===
+REQUEST:
+{"company_id": "65276", "query": "szivattyú", "limit": 3}
+
+RESPONSE:
+{
+    "detected_language": "hu",
+    "response_time_ms": 766.4553770009661,
+    "retrieval_mode": "hybrid_rrf",
+    "company_id": "65276",
+    "results": [
+        {
+            "company_id": "65276",
+            "language": "hu",
+            "content_chunk": "[C\u00c9G:] Zultzer Pumpen Kft.\n[PROFIL:] kompresszor, szennyv\u00edztechnika \u00e9s szivatty\u00fa\n\nA Zultzer Pumpen Kft. egy korl\u00e1tolt felel\u0151ss\u00e9g\u0171 t\u00e1rsas\u00e1g (Kft.), amelyet 1996-ban alap\u00edtottak, \u00e9s jelenleg 13 f\u0151t foglalkoztat. A c\u00e9g jelenleg m\u0171k\u00f6d\u0151 st\u00e1tusz\u00fa. A Sulzer glob\u00e1lis szolg\u00e1ltat\u00e1ssz\u00e1ll\u00edt\u00f3 a szennyv\u00edzkezel\u00e9si technol\u00f3gia ter\u00e9n; teljes term\u00e9kpalett\u00e1j\u00e1n ABS gy\u00e1rtm\u00e1ny\u00fa szivatty\u00fakat, kever\u0151ket, leveg\u0151ztet\u0151berendez\u00e9seket, kompresszorokat, valamint vez\u00e9rl\u00e9seket \u00e9s fel\u00fcgyeleti eszk\u00f6z\u00f6ket, illetve szervizt k\u00edn\u00e1l. A Sulzer a v\u00edzmentes\u00edt\u0151 piac sz\u00e1m\u00e1ra is biztos\u00edt szivatty\u00fakat. F\u0151 tev\u00e9kenys\u00e9gi ter\u00fcleteik: kompresszor, szennyv\u00edztechnika, szivatty\u00fa \u00e9s t\u00f6m\u00edt\u00e9stechnika. K\u00edn\u00e1lt szolg\u00e1ltat\u00e1sok: m\u00e9rn\u00f6ki szolg\u00e1ltat\u00e1s, b\u00e9rl\u00e9s, beszerel\u00e9s, nagykereskedelem, szerviz \u00e9s gy\u00e1rt\u00e1s. Tan\u00fas\u00edtv\u00e1nyaik: ISO 14001 \u00e9s ISO 9001. Forgalmazott m\u00e1rk\u00e1k: ABS, ABS MF, ABS XFP, HST, Piranha, Pumpex, Scaba, Scanpump \u00e9s Swedmeter. Lefedett megy\u00e9k sz\u00e1ma: 20. Gyakran ism\u00e9telt k\u00e9rd\u00e9sek: Milyen t\u00edpus\u00fa szivatty\u00fakat k\u00edn\u00e1l a Sulzer a szennyv\u00edzkezel\u00e9shez? Rendelkeznek-e szervizszolg\u00e1ltat\u00e1ssal \u00e9s karbantart\u00e1si szerz\u0151d\u00e9ssel? Milyen garanci\u00e1lis felt\u00e9telek vonatkoznak az ABS szivatty\u00fakra? Lehet-e a szivatty\u00fakat b\u00e9rbe venni r\u00f6vid t\u00e1vra? Milyen tan\u00fas\u00edtv\u00e1nyokkal rendelkeznek a term\u00e9kek (ISO 14001, ISO 9001)?",
+            "chunk_index": 0,
+            "metadata": {
+                "status": "OK",
+                "ai_type": "Manufacturer",
+                "add_words": [
+                    "szivatty\u00fa",
+                    "szennyv\u00edzkezel\u00e9s",
+                    "kompresszor",
+                    "ABS szivatty\u00fa",
+                    "ipari szivatty\u00fa",
+                    "szerviz",
+                    "b\u00e9rl\u00e9s",
+                    "ISO 9001",
+                    "v\u00edzmentes\u00edt\u0151",
+                    "m\u00e9rn\u00f6ki szolg\u00e1ltat\u00e1s"
+                ],
+                "topic_suggestions": [
+                    "Hi\u00e1nyz\u00f3 c\u00e9gc\u00edm \u00e9s el\u00e9rhet\u0151s\u00e9gi adatok",
+                    "Nincs megadva a pontos term\u00e9kkateg\u00f3ria",
+                    "Hi\u00e1nyzik a weboldal URL",
+                    "Nem szerepel a c\u00e9g p\u00e9nz\u00fcgyi m\u00e9rete (\u00e1rbev\u00e9tel)",
+                    "Tov\u00e1bbi r\u00e9szletek a szerviz szolg\u00e1ltat\u00e1sokr\u00f3l"
+                ],
+                "recommended_headline": "Sulzer szivatty\u00fak \u00e9s kompresszorok teljes k\u00f6r\u0171 megold\u00e1sa szennyv\u00edzkezel\u00e9shez"
+            },
+            "is_highlighted": false,
+            "rrf_score": 0.03278688524590164
+        }
+    ],
+    "cross_language_fallback_triggered": false
+}

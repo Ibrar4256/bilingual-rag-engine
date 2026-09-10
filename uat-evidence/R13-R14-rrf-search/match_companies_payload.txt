@@ -1,0 +1,107 @@
+=== /match/companies ===
+REQUEST:
+{"query": "szivattyú gyártó", "limit": 3}
+
+RESPONSE:
+{
+    "detected_language": "hu",
+    "response_time_ms": 961.9348179985536,
+    "retrieval_mode": "hybrid_rrf",
+    "results": [
+        {
+            "company_id": "65276",
+            "language": "hu",
+            "content_chunk": "[C\u00c9G:] Zultzer Pumpen Kft.\n[PROFIL:] kompresszor, szennyv\u00edztechnika \u00e9s szivatty\u00fa\n\nA Zultzer Pumpen Kft. egy korl\u00e1tolt felel\u0151ss\u00e9g\u0171 t\u00e1rsas\u00e1g (Kft.), amelyet 1996-ban alap\u00edtottak, \u00e9s jelenleg 13 f\u0151t foglalkoztat. A c\u00e9g jelenleg m\u0171k\u00f6d\u0151 st\u00e1tusz\u00fa. A Sulzer glob\u00e1lis szolg\u00e1ltat\u00e1ssz\u00e1ll\u00edt\u00f3 a szennyv\u00edzkezel\u00e9si technol\u00f3gia ter\u00e9n; teljes term\u00e9kpalett\u00e1j\u00e1n ABS gy\u00e1rtm\u00e1ny\u00fa szivatty\u00fakat, kever\u0151ket, leveg\u0151ztet\u0151berendez\u00e9seket, kompresszorokat, valamint vez\u00e9rl\u00e9seket \u00e9s fel\u00fcgyeleti eszk\u00f6z\u00f6ket, illetve szervizt k\u00edn\u00e1l. A Sulzer a v\u00edzmentes\u00edt\u0151 piac sz\u00e1m\u00e1ra is biztos\u00edt szivatty\u00fakat. F\u0151 tev\u00e9kenys\u00e9gi ter\u00fcleteik: kompresszor, szennyv\u00edztechnika, szivatty\u00fa \u00e9s t\u00f6m\u00edt\u00e9stechnika. K\u00edn\u00e1lt szolg\u00e1ltat\u00e1sok: m\u00e9rn\u00f6ki szolg\u00e1ltat\u00e1s, b\u00e9rl\u00e9s, beszerel\u00e9s, nagykereskedelem, szerviz \u00e9s gy\u00e1rt\u00e1s. Tan\u00fas\u00edtv\u00e1nyaik: ISO 14001 \u00e9s ISO 9001. Forgalmazott m\u00e1rk\u00e1k: ABS, ABS MF, ABS XFP, HST, Piranha, Pumpex, Scaba, Scanpump \u00e9s Swedmeter. Lefedett megy\u00e9k sz\u00e1ma: 20. Gyakran ism\u00e9telt k\u00e9rd\u00e9sek: Milyen t\u00edpus\u00fa szivatty\u00fakat k\u00edn\u00e1l a Sulzer a szennyv\u00edzkezel\u00e9shez? Rendelkeznek-e szervizszolg\u00e1ltat\u00e1ssal \u00e9s karbantart\u00e1si szerz\u0151d\u00e9ssel? Milyen garanci\u00e1lis felt\u00e9telek vonatkoznak az ABS szivatty\u00fakra? Lehet-e a szivatty\u00fakat b\u00e9rbe venni r\u00f6vid t\u00e1vra? Milyen tan\u00fas\u00edtv\u00e1nyokkal rendelkeznek a term\u00e9kek (ISO 14001, ISO 9001)?",
+            "chunk_index": 0,
+            "metadata": {
+                "status": "OK",
+                "ai_type": "Manufacturer",
+                "add_words": [
+                    "szivatty\u00fa",
+                    "szennyv\u00edzkezel\u00e9s",
+                    "kompresszor",
+                    "ABS szivatty\u00fa",
+                    "ipari szivatty\u00fa",
+                    "szerviz",
+                    "b\u00e9rl\u00e9s",
+                    "ISO 9001",
+                    "v\u00edzmentes\u00edt\u0151",
+                    "m\u00e9rn\u00f6ki szolg\u00e1ltat\u00e1s"
+                ],
+                "topic_suggestions": [
+                    "Hi\u00e1nyz\u00f3 c\u00e9gc\u00edm \u00e9s el\u00e9rhet\u0151s\u00e9gi adatok",
+                    "Nincs megadva a pontos term\u00e9kkateg\u00f3ria",
+                    "Hi\u00e1nyzik a weboldal URL",
+                    "Nem szerepel a c\u00e9g p\u00e9nz\u00fcgyi m\u00e9rete (\u00e1rbev\u00e9tel)",
+                    "Tov\u00e1bbi r\u00e9szletek a szerviz szolg\u00e1ltat\u00e1sokr\u00f3l"
+                ],
+                "recommended_headline": "Sulzer szivatty\u00fak \u00e9s kompresszorok teljes k\u00f6r\u0171 megold\u00e1sa szennyv\u00edzkezel\u00e9shez"
+            },
+            "is_highlighted": false,
+            "rrf_score": 0.01639344262295082
+        },
+        {
+            "company_id": "65278",
+            "language": "hu",
+            "content_chunk": "[C\u00c9G:] AEROCIKLON Kft.\n[PROFIL:] \u00c9p\u00fcletg\u00e9p\u00e9szeti szerelv\u00e9ny, \u00c9p\u00fcletg\u00e9p\u00e9szeti szolg\u00e1ltat\u00e1s \u00e9s f\u0171t\u00e9stechnika\n\nAz AEROCIKLON Kft. egy korl\u00e1tolt felel\u0151ss\u00e9g\u0171 t\u00e1rsas\u00e1g (Kft.), amelyet 2011-ban alap\u00edtottak, \u00e9s jelenleg 2 f\u0151t foglalkoztat. A c\u00e9g jelenleg m\u0171k\u00f6d\u0151 st\u00e1tusz\u00fa. A mi c\u00e9g\u00fcnk F\u0151 tev\u00e9kenys\u00e9gi ter\u00fcleteik: \u00c9p\u00fcletg\u00e9p\u00e9szeti szerelv\u00e9ny, \u00c9p\u00fcletg\u00e9p\u00e9szeti szolg\u00e1ltat\u00e1s, f\u0171t\u00e9stechnika, kaz\u00e1n, kl\u00edmatechnika, l\u00e9gtechnika \u00e9s szennyv\u00edztechnika. K\u00edn\u00e1lt szolg\u00e1ltat\u00e1sok: m\u00e9rn\u00f6ki szolg\u00e1ltat\u00e1s, beszerel\u00e9s \u00e9s szerviz. Tan\u00fas\u00edtv\u00e1nyaik: ISO 9001. Forgalmazott m\u00e1rk\u00e1k: LG \u00e9s Panasonic. Lefedett megy\u00e9k sz\u00e1ma: 20. Gyakran ism\u00e9telt k\u00e9rd\u00e9sek: Milyen f\u0171t\u00e9stechnikai megold\u00e1sokat k\u00edn\u00e1lnak ipari l\u00e9tes\u00edtm\u00e9nyekhez? Tudnak-e biztos\u00edtani LG \u00e9s Panasonic kl\u00edmaberendez\u00e9sek telep\u00edt\u00e9s\u00e9t \u00e9s karbantart\u00e1s\u00e1t? Milyen garanci\u00e1lis \u00e9s szervizszolg\u00e1ltat\u00e1sokat ny\u00fajtanak a szennyv\u00edztechnikai rendszerekre?",
+            "chunk_index": 0,
+            "metadata": {
+                "status": "OK",
+                "ai_type": "Company",
+                "add_words": [
+                    "\u00e9p\u00fcletg\u00e9p\u00e9szet",
+                    "f\u0171t\u00e9stechnika",
+                    "kl\u00edmatechnika",
+                    "l\u00e9gtechnika",
+                    "szennyv\u00edztechnika",
+                    "ISO 9001",
+                    "LG",
+                    "Panasonic",
+                    "m\u00e9rn\u00f6ki szolg\u00e1ltat\u00e1s",
+                    "beszerel\u00e9s"
+                ],
+                "topic_suggestions": [
+                    "Hi\u00e1nyzik a c\u00e9g pontos sz\u00e9khely c\u00edme",
+                    "A munkav\u00e1llal\u00f3k sz\u00e1ma friss\u00edtend\u0151",
+                    "R\u00e9szletes term\u00e9klist\u00e1t a forgalmazott m\u00e1rk\u00e1kr\u00f3l k\u00e9r\u00fcnk",
+                    "Az ISO 9001 tan\u00fas\u00edtv\u00e1ny \u00e9rv\u00e9nyess\u00e9gi d\u00e1tuma hi\u00e1nyzik",
+                    "A lefedett megy\u00e9k list\u00e1j\u00e1nak pontosabb megad\u00e1sa"
+                ],
+                "recommended_headline": "AEROCIKLON Kft. \u2013 Komplett \u00e9p\u00fcletg\u00e9p\u00e9szeti megold\u00e1sok \u00e9s szerviz 20 megy\u00e9ben"
+            },
+            "is_highlighted": false,
+            "rrf_score": 0.016129032258064516
+        },
+        {
+            "company_id": "65279",
+            "language": "hu",
+            "content_chunk": "[C\u00c9G:] AGS BUDAPEST NEMZETK\u00d6ZI K\u00d6LT\u00d6ZTET\u0150 Kft.\n[PROFIL:] k\u00f6lt\u00f6ztet\u00e9s\n\nAz AGS BUDAPEST NEMZETK\u00d6ZI K\u00d6LT\u00d6ZTET\u0150 Kft. egy korl\u00e1tolt felel\u0151ss\u00e9g\u0171 t\u00e1rsas\u00e1g (Kft.), amelyet 1993-ban alap\u00edtottak, \u00e9s jelenleg 5 f\u0151t foglalkoztat. A c\u00e9g jelenleg m\u0171k\u00f6d\u0151 st\u00e1tusz\u00fa. Az AGS D\u00e9m\u00e9nagement International 1974 \u00f3ta ny\u00fajt kiemelked\u0151 szolg\u00e1ltat\u00e1sokat a nemzetk\u00f6zi k\u00f6lt\u00f6ztet\u00e9s \u00e9s archiv\u00e1l\u00e1s ter\u00e9n. Sz\u00e9lesk\u00f6r\u0171 megold\u00e1sokat k\u00edn\u00e1lunk, amelyek a glob\u00e1lis mobilit\u00e1s ig\u00e9nyeit szolg\u00e1lj\u00e1k ki, t\u00f6bb mint 50 000 csal\u00e1d \u00e9s v\u00e1llalat sz\u00e1m\u00e1ra \u00e9vente. F\u0151 tev\u00e9kenys\u00e9gi ter\u00fcleteik: k\u00f6lt\u00f6ztet\u00e9s. K\u00edn\u00e1lt szolg\u00e1ltat\u00e1sok: m\u00e9rn\u00f6ki szolg\u00e1ltat\u00e1s \u00e9s szerviz. Tan\u00fas\u00edtv\u00e1nyaik: ISO 9001. Forgalmazott m\u00e1rk\u00e1k: CE Kont\u00e9ner. Lefedett megy\u00e9k sz\u00e1ma: 20. Gyakran ism\u00e9telt k\u00e9rd\u00e9sek: Milyen t\u00edpus\u00fa nemzetk\u00f6zi k\u00f6lt\u00f6ztet\u00e9si szolg\u00e1ltat\u00e1sokat k\u00edn\u00e1lnak? Van-e lehet\u0151s\u00e9g szem\u00e9lyre szabott archiv\u00e1l\u00e1si megold\u00e1sokra? Milyen garanci\u00e1kat v\u00e1llalnak az ISO 9001 tan\u00fas\u00edtv\u00e1nnyal? Milyen kont\u00e9ner t\u00edpusokat haszn\u00e1lnak a sz\u00e1ll\u00edt\u00e1shoz? Mekkora a lefedetts\u00e9g\u00fck Magyarorsz\u00e1gon \u00e9s Eur\u00f3p\u00e1ban?",
+            "chunk_index": 0,
+            "metadata": {
+                "status": "OK",
+                "ai_type": "Enriched",
+                "add_words": [
+                    "nemzetk\u00f6zi k\u00f6lt\u00f6ztet\u00e9s",
+                    "archiv\u00e1l\u00e1s",
+                    "k\u00f6lt\u00f6ztet\u0151 c\u00e9g",
+                    "ISO 9001",
+                    "CE kont\u00e9ner",
+                    "glob\u00e1lis mobilit\u00e1s",
+                    "v\u00e1llalati k\u00f6lt\u00f6ztet\u00e9s",
+                    "budapesti k\u00f6lt\u00f6ztet\u00e9s"
+                ],
+                "topic_suggestions": [
+                    "Hi\u00e1nyz\u00f3 c\u00e9gjegyz\u00e9ksz\u00e1m",
+                    "Friss\u00edtend\u0151 telefonsz\u00e1m",
+                    "Tov\u00e1bbi szolg\u00e1ltat\u00e1sok r\u00e9szletez\u00e9se",
+                    "Pontosabb lefedett megy\u00e9k list\u00e1ja",
+                    "Referenci\u00e1k \u00e9s \u00fcgyf\u00e9lv\u00e9lem\u00e9nyek hozz\u00e1ad\u00e1sa"
+                ],
+                "recommended_headline": "AGS Budapest Nemzetk\u00f6zi K\u00f6lt\u00f6ztet\u0151 \u2013 ISO 9001 tan\u00fas\u00edtv\u00e1nnyal, glob\u00e1lis mobilit\u00e1s"
+            },
+            "is_highlighted": false,
+            "rrf_score": 0.015873015873015872
+        }
+    ],
+    "cross_language_fallback_triggered": false
+}
